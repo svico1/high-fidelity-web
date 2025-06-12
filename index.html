@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>High Fidelity - Camperas Vintage</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="styles.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="logo"><a href="/" style="color: inherit; text-decoration: none;">High Fidelity</a></div>
+<button aria-label="Abrir menú" class="menu-toggle">
+<i class="fas fa-bars"></i>
+</button>
+<div class="nav-links">
+<a href="#home">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#about">Nosotros</a>
+</div>
+<div class="icono-carrito">
+<i class="fas fa-shopping-cart"></i>
+<span id="contador-carrito">0</span>
+</div>
+</nav>
+<div id="toast-container"></div>
+<main>
+<section class="active" id="home">
+<div class="hero" style="position: relative; height: 80vh; background-image: url('img/cliff.jpg'); background-size: cover; background-position: center;"><div style="position: absolute; bottom: 30px; left: 40px; color: #f8da5b; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">High Fidelity</div></div><section style="text-align: center; padding: 2rem 1rem;"><p style="font-size: 1.3rem; font-style: italic;">Camperas con alma de los años 60. Revive la época dorada del rock y la libertad con nuestras piezas únicas.</p><a class="boton-primario" href="#productos" style="display: inline-block; margin-top: 1rem;">Ver Catálogo</a></section>
+<div class="seccion-productos" id="productos">
+<h2>Nuestras Camperas</h2>
+<section style="padding: 3rem 1rem;"><h2 style="text-align: center; color: #8d6748;">Inspiración de nuestras camperas</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto;"><div style="text-align: center;"><img src="img/shooter69.jpg" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/><p style="margin-top: 0.5rem; font-style: italic; color: #444;">SHOOTER 69’ – Inspirada en la rebeldía del Lejano Oeste de los 60</p></div><div style="text-align: center;"><img src="img/corduroy_echo.jpg" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/><p style="margin-top: 0.5rem; font-style: italic; color: #444;">CORDUROY ECHO – Con estética de estudio y folk refinado</p></div><div style="text-align: center;"><img src="img/field_fade.jpg" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/><p style="margin-top: 0.5rem; font-style: italic; color: #444;">FIELD FADE – Herencia británica rural con onda utilitaria</p></div><div style="text-align: center;"><img src="img/the_booth.jpg" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/><p style="margin-top: 0.5rem; font-style: italic; color: #444;">THE BOOTH – Urbana, cruda y cinematográfica como Cliff Booth</p></div></div></section><div class="productos-grid" id="contenedor-productos"></div>
+</div>
+<div class="seccion-nosotros" id="about">
+<h2>Sobre Nosotros</h2>
+<div class="contenido-nosotros">
+<div class="texto-nosotros">
+<p>
+                En High Fidelity, cada campera nos muestra una realidad distinta de nostros mismos. Inspirados en la revolución cultural de los años 60, 
+                creamos piezas que capturan la rebeldía y la autenticidad de una época que marcó a la humanidad desde los derechos civiles y la musica hasta el alunizaje del Apollo 11. 
+                Nuestras camperas no son solo ropa, son declaraciones de estilo que trascienden el tiempo. Por eso han sido inmortalizadas tantas veces en la pantalla grande. Nuestra intencion es repetir eso a través de la moda. 
+                Utilizamos materiales de primera calidad y técnicas artesanales para asegurar que cada pieza 
+                mantenga su carácter único mientras perdura en el tiempo, tal como las mejores canciones de esa década dorada.
+                Ahora suena "California Dreamin" de The Mamas & the papas. Estas en Aspen 102.3, pura musica las 24 horas. 
+              </p>
+</div>
+<div class="contenedor-mapa">
+<iframe allowfullscreen="" height="400" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895168!2d-58.38375908477038!3d-34.60373888045943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1645454545454!5m2!1ses!2sar" style="border: 0" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="carrito">
+<h2>Carrito de Compras</h2>
+<div id="elementos-carrito"></div>
+<div class="carrito-summary">
+<p>Total: $<span id="total-carrito">0</span></p>
+<button class="boton-primario" id="boton-finalizar">
+            Proceder al Pago
+          </button>
+</div>
+</section>
+<section id="checkout">
+<h2>Finalizar Compra</h2>
+<form id="formulario-compra">
+<div class="form-group">
+<label for="name">Nombre Completo</label>
+<input id="name" placeholder="Tu nombre completo" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" placeholder="tu@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="address">Dirección de envío</label>
+<input id="address" placeholder="Tu dirección completa" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="card">Número de Tarjeta</label>
+<input id="card" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="expiry-date">Fecha de Vencimiento (MM/AA)</label>
+<input id="expiry-date" pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="MM/AA" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="cvv">Código de Seguridad (CVV)</label>
+<input id="cvv" pattern="[0-9]{3}" placeholder="123" required="" type="text"/>
+</div>
+<button class="boton-primario" type="submit">Confirmar Compra</button>
+</form>
+</section>
+</main>
+<footer>
+<div class="contenido-pie">
+<div class="seccion-pie">
+<h3>Contáctanos</h3>
+<p><i class="fas fa-phone"></i> +54 9 11 2345-6789</p>
+<p><i class="fas fa-map-marker-alt"></i> Av. Corrientes 1960, CABA</p>
+</div>
+<div class="seccion-pie">
+<h3>Horarios</h3>
+<p>Lunes a Viernes: 10:00 - 19:00</p>
+<p>Sábados: 11:00 - 15:00</p>
+</div>
+<div class="seccion-pie">
+<h3>High Fidelity</h3>
+<p><i class="fas fa-music"></i> Camperas con alma vintage</p>
+<p>© Pagina Web – Santino Vico</p>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
